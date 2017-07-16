@@ -1,36 +1,15 @@
 var five = require("johnny-five");
+var board = new five.Board();
 
+board.on("ready", function() {
+  var rgb = new five.Led.RGB([6, 5, 3]);
+  var index = 0;
+  var rainbow = ["FF0000", "FF7F00", "FFFF00", "00FF00", "0000FF", "4B0082", "8F00FF"];
 
-five.Board().on("ready", function() {
-
-  // Initialize the RGB LED
-  var led = new five.Led.RGB({
-    pins: {
-      red: 6,
-      green: 5,
-      blue: 3
+  this.loop(1000, function() {
+    rgb.color(rainbow[index++]);
+    if (index === rainbow.length) {
+      index = 0;
     }
   });
-
-  // RGB LED alternate constructor
-  // This will normalize an array of pins in [r, g, b]
-  // order to an object (like above) that's shaped like:
-  // {
-  //   red: r,
-  //   green: g,
-  //   blue: b
-  // }
-  //var led = new five.Led.RGB([3,5,6]);
-
-  // Add led to REPL (optional)
-  this.repl.inject({
-    led: led
-  });
-
-  // Turn it on and set the initial color
-  led.on();
-  led.color("#FF0000");
-
-  led.blink(1000);
-
 });
