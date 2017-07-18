@@ -14,11 +14,6 @@ board.on("ready", function() {
   var index = 0;
   var rainbow = ["FF0000", "FF7F00", "FFFF00", "00FF00", "0000FF", "4B0082", "8F00FF"];
 
-  // Add led to REPL (optional)
-  this.repl.inject({
-    anode: anode
-  });
-
   this.loop(1000, function() {
     anode.color(rainbow[index++]);
     if (index === rainbow.length) {
