@@ -12,7 +12,7 @@ board.on("ready", function() {
   });
 
   var index = 0;
-  var rainbow = ["FF0000", "FF7F00", "FFFF00", "00FF00", "0000FF", "00FFBF"];
+  var rainbow = ["FF0000", "FF7F00", "FF007F", "00FF00", "0000FF", "00FFBF"];
 
   this.loop(1000, function() {
     anode.color(rainbow[index++]);
