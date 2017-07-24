@@ -25,6 +25,8 @@ board.on("ready", function() {
       timeZone: 'Asia/Tokyo'
   });
 
+  cron.start();
+
   anode.color("FF0000");
 });
 
