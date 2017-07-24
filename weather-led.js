@@ -1,4 +1,4 @@
-var cronJob = require('cron').CronJob;
+var cronJob = require('node-cron').CronJob;
 var five = require("johnny-five");
 var board = new five.Board();
 
