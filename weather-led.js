@@ -1,3 +1,4 @@
+let cron = require('node-cron');
 var five = require("johnny-five");
 var board = new five.Board();
 
@@ -11,11 +12,13 @@ board.on("ready", function() {
     isAnode: true
   });
 
-  httpRequest();
+  cron.schedule('0 3 0***',()=> {
+      getWeatherInformation();
+  });
 
   anode.color("FF0000");
 });
 
-function httpRequest() {
+private function getWeatherInformation() {
     console.log("hellow");
 }
