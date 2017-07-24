@@ -1,4 +1,4 @@
-let cronJob = require('node-cron').CronJob;
+var cronJob = require('cron').CronJob;
 var five = require("johnny-five");
 var board = new five.Board();
 
@@ -17,7 +17,7 @@ board.on("ready", function() {
   });*/
 
   var cron = new cronJob({
-      cronTime: '5 * * * * *',
+      cronTime: '*/5 * * * * *',
       onTick: function() {
           getWeatherInformation();
       },
