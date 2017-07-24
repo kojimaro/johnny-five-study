@@ -19,6 +19,6 @@ board.on("ready", function() {
   anode.color("FF0000");
 });
 
-private function getWeatherInformation() {
+function getWeatherInformation() {
     console.log("hellow");
 }
