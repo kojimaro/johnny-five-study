@@ -12,7 +12,7 @@ board.on("ready", function() {
     isAnode: true
   });
 
-  cron.schedule('0 3 0***',()=> {
+  cron.schedule('030***',()=>{
       getWeatherInformation();
   });
 
