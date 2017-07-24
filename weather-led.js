@@ -11,5 +11,11 @@ board.on("ready", function() {
     isAnode: true
   });
 
+  httpRequest();
+
   anode.color("FF0000");
 });
+
+function httpRequest() {
+    console.log("hellow");
+}
