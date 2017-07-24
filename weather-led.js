@@ -1,4 +1,4 @@
-var cronJob = require('node-cron').CronJob;
+var cron = require('node-cron');
 var five = require("johnny-five");
 var board = new five.Board();
 
@@ -12,20 +12,9 @@ board.on("ready", function() {
     isAnode: true
   });
 
-  /*cron.schedule('5 0 0 * * *',()=>{
+  cron.schedule('5 0 0 * * *',()=>{
       getWeatherInformation();
-  });*/
-
-  var cron = new cronJob({
-      cronTime: '*/5 * * * * *',
-      onTick: function() {
-          getWeatherInformation();
-      },
-      start: true,
-      timeZone: 'Asia/Tokyo'
   });
-
-  cron.start();
 
   anode.color("FF0000");
 });
